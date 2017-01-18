@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="lazer">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+</head>
+<body ng-controller="controlador">
+  <header>
+    <h6 class="text-center">Workshop MEAN STACK 2017</h6>
+  </header>
+
+  <section>
+
+  </section>
+  <div class="col-md-6">
+    <div class="res" ng-repeat="item in items">
+      <ul class="list-group">
+        <li class="list-group-item list-group-item-info">
+        {{ item.name }}
+        </li>
+      </ul>
+
+    </div>
+
+  </div>
+  <!-- <script src="bower_components/angular/angular.js"></script> -->
+	<script src="controllers/index.js"></script>
+</body>
+</body>
+</html>

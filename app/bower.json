@@ -1,0 +1,21 @@
+{
+  "name": "lazer",
+  "homepage": "https://github.com/danieltoro/lazer",
+  "description": "FronEnd del proyecto lazer",
+  "main": "",
+  "authors": [
+    "Daniel toro"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "angular": "^1.6.1"
+  }
+}
