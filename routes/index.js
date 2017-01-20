@@ -1,12 +1,10 @@
 'use strict'
 
 const express = require('express')
-const commerceController = require('../controllers/commerce');
-const mainController = require('../controllers/main');
+
+const commerceController = require('../controllers/commerce')
 
 const api = express.Router()
-
-api.get('/', commerceController.init)
 
 api.get('/commerce', commerceController.getCommerces)
 api.get('/commerce/:commerceId', commerceController.getCommerce)

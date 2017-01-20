@@ -2,8 +2,7 @@
 
 const Commerce = require('../models/commerce')
 
-function getCommerce(req, res) {
-
+function getCommerce (req, res) {
   let commerceId = req.params.commerceId
 
   Commerce.findById(commerceId, (err, commerce) => {
@@ -14,18 +13,16 @@ function getCommerce(req, res) {
   })
 }
 
-function getCommerces(req, res) {
-
+function getCommerces (req, res) {
   Commerce.find({}, (err, commerces) => {
-    if(err) return res.status(500).send({message: `Error al realizar la peticion: ${err}`})
-    if(!commerces) return res.status(404).send({message: `No existen productos`})
+    if (err) return res.status(500).send({message: `Error al realizar la peticion: ${err}`})
+    if (!commerces) return res.status(404).send({message: `No existen productos`})
 
     res.status(200).send({ commerces })
   })
 }
 
-function saveCommerces(req, res) {
-
+function saveCommerces (req, res) {
   console.log('POST /api/commerce')
   console.log(req.body)
 
@@ -38,30 +35,28 @@ function saveCommerces(req, res) {
   commerce.description = req.body.description
 
   commerce.save((err, commerceStored) => {
-    if(err) res.status(500).send({ message: `Error al guardar datos: ${err}` })
+    if (err) res.status(500).send({ message: `Error al guardar datos: ${err}` })
 
     res.status(200).send({ commerce: commerceStored })
   })
 }
 
-function updateCommerce(req, res) {
-
+function updateCommerce (req, res) {
   let commerceId = req.params.commerceId
   let update = req.body
 
   Commerce.findByIdAndUpdate(commerceId, update, (err, commerceUpdate) => {
-    if(err) res.status(500).send({message: `Error al actualizar el producto: ${err}`})
+    if (err) res.status(500).send({message: `Error al actualizar el producto: ${err}`})
 
     res.status(200).send({product: commerceUpdate})
   })
 }
 
-function deleteCommerce(req, res) {
-
+function deleteCommerce (req, res) {
   let commerceId = req.params.commerceId
 
   Commerce.findById(commerceId, (err, commerce) => {
-    if(err) res.status(500).send({message: `Error al borrar producto: ${err}`})
+    if (err) res.status(500).send({message: `Error al borrar producto: ${err}`})
 
     commerce.remove(err => {
       res.status(200).send({message: `el producto ha sido eliminado`})
@@ -69,18 +64,10 @@ function deleteCommerce(req, res) {
   })
 }
 
-function init(req, res) {
-
-  res.send('Hola mundo').end()
-
-}
-
-
 module.exports = {
   getCommerce,
   getCommerces,
   saveCommerces,
   updateCommerce,
-  deleteCommerce,
-  init
+  deleteCommerce
 }
