@@ -1,4 +1,5 @@
-exports = angular.module('lazer',[])
+angular.module('lazer',[])
+
 
 .controller('main', function( $scope, $http ){
 
