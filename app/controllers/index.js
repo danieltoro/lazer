@@ -1,4 +1,5 @@
-exports = angular.module('lazer',[])
+angular.module('lazer',[])
+
 
 .config(function($routeProvider){
 	$routeProvider
