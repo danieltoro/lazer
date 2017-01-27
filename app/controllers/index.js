@@ -9,7 +9,7 @@ angular.module('lazer',[])
 	})
 	.otherwise({
             redirectTo: '/'
-    })
+  })
 
 })
 .controller('main', function( $scope, $http ){
@@ -21,4 +21,5 @@ angular.module('lazer',[])
       },function(error){
           //si hay un error lo mostramos por consola
           console.log(error)
+      })
 })

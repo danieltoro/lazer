@@ -14,7 +14,7 @@ function getCommerce (req, res) {
 }
 
 function getCommerces (req, res) {
-  Commerce.find({}, (err, commerces) => {
+  Commerce.find((err, commerces) => {
     if (err) return res.status(500).send({message: `Error al realizar la peticion: ${err}`})
     if (!commerces) return res.status(404).send({message: `No existen productos`})
 
