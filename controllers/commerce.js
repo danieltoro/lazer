@@ -19,6 +19,7 @@ function getCommerces (req, res) {
     if (!commerces) return res.status(404).send({message: `No existen productos`})
 
     res.status(200).send({ commerces })
+    console.log(commerces);
   })
 }
 

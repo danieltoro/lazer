@@ -1,5 +1,16 @@
 exports = angular.module('lazer',[])
 
+.config(function($routeProvider){
+	$routeProvider
+	.when('/', {
+		controller: 'main',
+		templateUrl: 'template/home.html'
+	})
+	.otherwise({
+            redirectTo: '/'
+    })
+
+})
 .controller('main', function( $scope, $http ){
 
       $http.get('http://localhost:3000/api')
