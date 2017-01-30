@@ -1,6 +1,6 @@
 exports = angular.module('controllers',[])
 
-.controller('main', function($scope,$http){
+.controller('main', function($scope, $http){
 
 	$http({method:'get', url:'/api/commerces'})
 	.then(function(data){
